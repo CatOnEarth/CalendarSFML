@@ -1,0 +1,360 @@
+\hypertarget{main_8cpp}{}\doxysection{D\+:/development/gcc/\+Calendar\+\_\+\+My\+\_\+\+SFML/\+Calendar2/main.cpp File Reference}
+\label{main_8cpp}\index{D:/development/gcc/Calendar\_My\_SFML/Calendar2/main.cpp@{D:/development/gcc/Calendar\_My\_SFML/Calendar2/main.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$algorithm$>$}\newline
+{\ttfamily \#include $<$iterator$>$}\newline
+{\ttfamily \#include $<$SFML/\+Graphics.\+hpp$>$}\newline
+{\ttfamily \#include $<$windows.\+h$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+{\ttfamily \#include \char`\"{}date.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Note.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}List\+\_\+of\+\_\+note.\+h\char`\"{}}\newline
+Include dependency graph for main.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+sf\+::\+Render\+Window \mbox{\hyperlink{main_8cpp_a955fbea74a6fc9d6d16bd789826bac57}{window}} (sf\+::\+Video\+Mode(855, 950), L\char`\"{}Calendar\char`\"{}, sf\+::\+Style\+::\+Close)
+\item 
+void \mbox{\hyperlink{main_8cpp_a63e90f7a7324cddf1142faacaebbe501}{mass\+\_\+days}} ()
+\item 
+void \mbox{\hyperlink{main_8cpp_af2fa85875878204300e96e429b61cce9}{draw\+\_\+numbers}} ()
+\item 
+bool \mbox{\hyperlink{main_8cpp_a235b002dbdf3b96cfc94d92ad201dbf5}{check\+\_\+digit}} (std\+::string num)
+\item 
+void \mbox{\hyperlink{main_8cpp_a08d0e241dd09aa2927d9f4a250297938}{change\+\_\+year}} ()
+\item 
+void \mbox{\hyperlink{main_8cpp_a07d4c3590f345fd0101dac3f5f606cb1}{fill\+\_\+day\+\_\+month}} ()
+\item 
+void \mbox{\hyperlink{main_8cpp_aa6241980ee722fad817cc951af305286}{draw\+\_\+names}} ()
+\item 
+int \mbox{\hyperlink{main_8cpp_aec40ab7ba9a9a1e44f6fbc391b632805}{click\+\_\+day}} (int x, int y)
+\item 
+void \mbox{\hyperlink{main_8cpp_a632f2c6fcc302c836c4982f2c133878c}{draw\+\_\+days}} ()
+\item 
+int \mbox{\hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8cpp_a633c713e01e278bfa03bae2107a85791}{coord\+\_\+days\+\_\+rectangle}} \mbox{[}2\mbox{]}\mbox{[}50\mbox{]} = \{0\}
+\item 
+sf\+::\+Font \mbox{\hyperlink{main_8cpp_a6d354835cad461f09999bfceea320fc5}{font}}
+\item 
+int \mbox{\hyperlink{main_8cpp_a2735629b7e008f3590c71d24b1070237}{day\+\_\+with\+\_\+note}} \mbox{[}31\mbox{]} = \{ 0 \}
+\item 
+int \mbox{\hyperlink{main_8cpp_ad26534d084f1594807b46758404546da}{year\+\_\+now}} = 2019
+\item 
+int \mbox{\hyperlink{main_8cpp_a06c26e76098ca777f4d7bccfb499bb67}{month\+\_\+now}} = 10
+\item 
+int \mbox{\hyperlink{main_8cpp_a6167e085077717791dd0364f51d16fca}{day\+\_\+now}} = 1
+\item 
+int \mbox{\hyperlink{main_8cpp_af8ec618802a81246228b59d4ed688745}{day\+\_\+month}} \mbox{[}6\mbox{]}\mbox{[}7\mbox{]} = \{ 0 \}
+\item 
+sf\+::\+Sprite \mbox{\hyperlink{main_8cpp_aa01c3bf8c780eb3497508a2cdb8ced7f}{Left\+Selector}}
+\item 
+sf\+::\+Sprite \mbox{\hyperlink{main_8cpp_a33338f3d0d88bb87326d5b796e1e4390}{Right\+Selector}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8cpp_a08d0e241dd09aa2927d9f4a250297938}\label{main_8cpp_a08d0e241dd09aa2927d9f4a250297938}} 
+\index{main.cpp@{main.cpp}!change\_year@{change\_year}}
+\index{change\_year@{change\_year}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{change\_year()}{change\_year()}}
+{\footnotesize\ttfamily void change\+\_\+year (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00098}{98}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=323pt]{main_8cpp_a08d0e241dd09aa2927d9f4a250297938_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{main_8cpp_a08d0e241dd09aa2927d9f4a250297938_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8cpp_a235b002dbdf3b96cfc94d92ad201dbf5}\label{main_8cpp_a235b002dbdf3b96cfc94d92ad201dbf5}} 
+\index{main.cpp@{main.cpp}!check\_digit@{check\_digit}}
+\index{check\_digit@{check\_digit}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{check\_digit()}{check\_digit()}}
+{\footnotesize\ttfamily bool check\+\_\+digit (\begin{DoxyParamCaption}\item[{std\+::string}]{num }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00088}{88}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{main_8cpp_a235b002dbdf3b96cfc94d92ad201dbf5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8cpp_aec40ab7ba9a9a1e44f6fbc391b632805}\label{main_8cpp_aec40ab7ba9a9a1e44f6fbc391b632805}} 
+\index{main.cpp@{main.cpp}!click\_day@{click\_day}}
+\index{click\_day@{click\_day}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{click\_day()}{click\_day()}}
+{\footnotesize\ttfamily int click\+\_\+day (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00244}{244}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{main_8cpp_aec40ab7ba9a9a1e44f6fbc391b632805_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8cpp_a632f2c6fcc302c836c4982f2c133878c}\label{main_8cpp_a632f2c6fcc302c836c4982f2c133878c}} 
+\index{main.cpp@{main.cpp}!draw\_days@{draw\_days}}
+\index{draw\_days@{draw\_days}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{draw\_days()}{draw\_days()}}
+{\footnotesize\ttfamily void draw\+\_\+days (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00259}{259}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{main_8cpp_a632f2c6fcc302c836c4982f2c133878c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{main_8cpp_a632f2c6fcc302c836c4982f2c133878c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8cpp_aa6241980ee722fad817cc951af305286}\label{main_8cpp_aa6241980ee722fad817cc951af305286}} 
+\index{main.cpp@{main.cpp}!draw\_names@{draw\_names}}
+\index{draw\_names@{draw\_names}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{draw\_names()}{draw\_names()}}
+{\footnotesize\ttfamily void draw\+\_\+names (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00208}{208}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=235pt]{main_8cpp_aa6241980ee722fad817cc951af305286_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{main_8cpp_aa6241980ee722fad817cc951af305286_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8cpp_af2fa85875878204300e96e429b61cce9}\label{main_8cpp_af2fa85875878204300e96e429b61cce9}} 
+\index{main.cpp@{main.cpp}!draw\_numbers@{draw\_numbers}}
+\index{draw\_numbers@{draw\_numbers}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{draw\_numbers()}{draw\_numbers()}}
+{\footnotesize\ttfamily void draw\+\_\+numbers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00041}{41}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{main_8cpp_af2fa85875878204300e96e429b61cce9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=234pt]{main_8cpp_af2fa85875878204300e96e429b61cce9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8cpp_a07d4c3590f345fd0101dac3f5f606cb1}\label{main_8cpp_a07d4c3590f345fd0101dac3f5f606cb1}} 
+\index{main.cpp@{main.cpp}!fill\_day\_month@{fill\_day\_month}}
+\index{fill\_day\_month@{fill\_day\_month}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{fill\_day\_month()}{fill\_day\_month()}}
+{\footnotesize\ttfamily void fill\+\_\+day\+\_\+month (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00170}{170}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{main_8cpp_a07d4c3590f345fd0101dac3f5f606cb1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=233pt]{main_8cpp_a07d4c3590f345fd0101dac3f5f606cb1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{main.cpp@{main.cpp}!main@{main}}
+\index{main@{main}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00283}{283}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8cpp_a63e90f7a7324cddf1142faacaebbe501}\label{main_8cpp_a63e90f7a7324cddf1142faacaebbe501}} 
+\index{main.cpp@{main.cpp}!mass\_days@{mass\_days}}
+\index{mass\_days@{mass\_days}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{mass\_days()}{mass\_days()}}
+{\footnotesize\ttfamily void mass\+\_\+days (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00026}{26}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=221pt]{main_8cpp_a63e90f7a7324cddf1142faacaebbe501_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8cpp_a955fbea74a6fc9d6d16bd789826bac57}\label{main_8cpp_a955fbea74a6fc9d6d16bd789826bac57}} 
+\index{main.cpp@{main.cpp}!window@{window}}
+\index{window@{window}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{window()}{window()}}
+{\footnotesize\ttfamily sf\+::\+Render\+Window window (\begin{DoxyParamCaption}\item[{sf\+::\+Video\+Mode(855, 950)}]{,  }\item[{L\char`\"{}Calendar\char`\"{}}]{,  }\item[{sf\+::\+Style\+::\+Close}]{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{main_8cpp_a955fbea74a6fc9d6d16bd789826bac57_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{main_8cpp_a633c713e01e278bfa03bae2107a85791}\label{main_8cpp_a633c713e01e278bfa03bae2107a85791}} 
+\index{main.cpp@{main.cpp}!coord\_days\_rectangle@{coord\_days\_rectangle}}
+\index{coord\_days\_rectangle@{coord\_days\_rectangle}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{coord\_days\_rectangle}{coord\_days\_rectangle}}
+{\footnotesize\ttfamily int coord\+\_\+days\+\_\+rectangle\mbox{[}2\mbox{]}\mbox{[}50\mbox{]} = \{0\}}
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00013}{13}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\mbox{\Hypertarget{main_8cpp_af8ec618802a81246228b59d4ed688745}\label{main_8cpp_af8ec618802a81246228b59d4ed688745}} 
+\index{main.cpp@{main.cpp}!day\_month@{day\_month}}
+\index{day\_month@{day\_month}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{day\_month}{day\_month}}
+{\footnotesize\ttfamily int day\+\_\+month\mbox{[}6\mbox{]}\mbox{[}7\mbox{]} = \{ 0 \}}
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00019}{19}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\mbox{\Hypertarget{main_8cpp_a6167e085077717791dd0364f51d16fca}\label{main_8cpp_a6167e085077717791dd0364f51d16fca}} 
+\index{main.cpp@{main.cpp}!day\_now@{day\_now}}
+\index{day\_now@{day\_now}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{day\_now}{day\_now}}
+{\footnotesize\ttfamily int day\+\_\+now = 1}
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00018}{18}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\mbox{\Hypertarget{main_8cpp_a2735629b7e008f3590c71d24b1070237}\label{main_8cpp_a2735629b7e008f3590c71d24b1070237}} 
+\index{main.cpp@{main.cpp}!day\_with\_note@{day\_with\_note}}
+\index{day\_with\_note@{day\_with\_note}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{day\_with\_note}{day\_with\_note}}
+{\footnotesize\ttfamily int day\+\_\+with\+\_\+note\mbox{[}31\mbox{]} = \{ 0 \}}
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00015}{15}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\mbox{\Hypertarget{main_8cpp_a6d354835cad461f09999bfceea320fc5}\label{main_8cpp_a6d354835cad461f09999bfceea320fc5}} 
+\index{main.cpp@{main.cpp}!font@{font}}
+\index{font@{font}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{font}{font}}
+{\footnotesize\ttfamily sf\+::\+Font font}
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00014}{14}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\mbox{\Hypertarget{main_8cpp_aa01c3bf8c780eb3497508a2cdb8ced7f}\label{main_8cpp_aa01c3bf8c780eb3497508a2cdb8ced7f}} 
+\index{main.cpp@{main.cpp}!LeftSelector@{LeftSelector}}
+\index{LeftSelector@{LeftSelector}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{LeftSelector}{LeftSelector}}
+{\footnotesize\ttfamily sf\+::\+Sprite Left\+Selector}
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00020}{20}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\mbox{\Hypertarget{main_8cpp_a06c26e76098ca777f4d7bccfb499bb67}\label{main_8cpp_a06c26e76098ca777f4d7bccfb499bb67}} 
+\index{main.cpp@{main.cpp}!month\_now@{month\_now}}
+\index{month\_now@{month\_now}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{month\_now}{month\_now}}
+{\footnotesize\ttfamily int month\+\_\+now = 10}
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00017}{17}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\mbox{\Hypertarget{main_8cpp_a33338f3d0d88bb87326d5b796e1e4390}\label{main_8cpp_a33338f3d0d88bb87326d5b796e1e4390}} 
+\index{main.cpp@{main.cpp}!RightSelector@{RightSelector}}
+\index{RightSelector@{RightSelector}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{RightSelector}{RightSelector}}
+{\footnotesize\ttfamily sf\+::\+Sprite Right\+Selector}
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00021}{21}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+
+\mbox{\Hypertarget{main_8cpp_ad26534d084f1594807b46758404546da}\label{main_8cpp_ad26534d084f1594807b46758404546da}} 
+\index{main.cpp@{main.cpp}!year\_now@{year\_now}}
+\index{year\_now@{year\_now}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{year\_now}{year\_now}}
+{\footnotesize\ttfamily int year\+\_\+now = 2019}
+
+
+
+Definition at line \mbox{\hyperlink{main_8cpp_source_l00016}{16}} of file \mbox{\hyperlink{main_8cpp_source}{main.\+cpp}}.
+

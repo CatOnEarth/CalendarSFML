@@ -1,0 +1,38 @@
+\hypertarget{read__file_8h_source}{}\doxysection{read\+\_\+file.\+h}
+\label{read__file_8h_source}\index{D:/development/gcc/Calendar\_My\_SFML/Calendar2/read\_file.h@{D:/development/gcc/Calendar\_My\_SFML/Calendar2/read\_file.h}}
+\mbox{\hyperlink{read__file_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{read__file_8h_source_l00001}00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{read__file_8h_source_l00002}00002 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{\Hypertarget{read__file_8h_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{read__file_8h_source_l00004}\mbox{\hyperlink{read__file_8h_aab744e5f6a4a3bb0452c626d92d08a2e}{00004}} \textcolor{keywordtype}{void} \mbox{\hyperlink{read__file_8h_aab744e5f6a4a3bb0452c626d92d08a2e}{days\_with\_note}}(\textcolor{keywordtype}{int} month, \textcolor{keywordtype}{int} year) \{}
+\DoxyCodeLine{\Hypertarget{read__file_8h_source_l00005}00005     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} tt = 0; tt < 31; ++tt) \{}
+\DoxyCodeLine{\Hypertarget{read__file_8h_source_l00006}00006         \mbox{\hyperlink{main_8cpp_a2735629b7e008f3590c71d24b1070237}{day\_with\_note}}[tt] = 0;}
+\DoxyCodeLine{\Hypertarget{read__file_8h_source_l00007}00007     \}}
+\DoxyCodeLine{\Hypertarget{read__file_8h_source_l00008}00008     std::string line;}
+\DoxyCodeLine{\Hypertarget{read__file_8h_source_l00009}00009     \textcolor{keywordtype}{int} ii = 0;}
+\DoxyCodeLine{\Hypertarget{read__file_8h_source_l00010}00010     \textcolor{keywordtype}{int} jj = 0;}
+\DoxyCodeLine{\Hypertarget{read__file_8h_source_l00011}00011     \textcolor{keywordtype}{int} day = 0;}
+\DoxyCodeLine{\Hypertarget{read__file_8h_source_l00012}00012     std::string ans;}
+\DoxyCodeLine{\Hypertarget{read__file_8h_source_l00013}00013     std::string file\_name = std::to\_string(month) + \textcolor{stringliteral}{"{}\_"{}} + std::to\_string(year) + \textcolor{stringliteral}{"{}.txt"{}};}
+\DoxyCodeLine{\Hypertarget{read__file_8h_source_l00014}00014     std::ifstream in(file\_name); \textcolor{comment}{// окрываем файл для чтения}}
+\DoxyCodeLine{\Hypertarget{read__file_8h_source_l00015}00015     \textcolor{keywordflow}{if} (in.is\_open())}
+\DoxyCodeLine{\Hypertarget{read__file_8h_source_l00016}00016     \{}
+\DoxyCodeLine{\Hypertarget{read__file_8h_source_l00017}00017         \textcolor{keywordflow}{while} (std::getline(in, line))}
+\DoxyCodeLine{\Hypertarget{read__file_8h_source_l00018}00018         \{}
+\DoxyCodeLine{\Hypertarget{read__file_8h_source_l00019}00019             \textcolor{keywordflow}{while} (line[ii] != \textcolor{charliteral}{':'}) \{}
+\DoxyCodeLine{\Hypertarget{read__file_8h_source_l00020}00020                 ans += line[ii];}
+\DoxyCodeLine{\Hypertarget{read__file_8h_source_l00021}00021                 ++ii;}
+\DoxyCodeLine{\Hypertarget{read__file_8h_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{read__file_8h_source_l00023}00023             \}}
+\DoxyCodeLine{\Hypertarget{read__file_8h_source_l00024}00024             day = std::atoi(ans.c\_str());}
+\DoxyCodeLine{\Hypertarget{read__file_8h_source_l00025}00025             \textcolor{comment}{//std::cout << ans << std::endl;}}
+\DoxyCodeLine{\Hypertarget{read__file_8h_source_l00026}00026             ++\mbox{\hyperlink{main_8cpp_a2735629b7e008f3590c71d24b1070237}{day\_with\_note}}[day -\/ 1];}
+\DoxyCodeLine{\Hypertarget{read__file_8h_source_l00027}00027             ii = 0;}
+\DoxyCodeLine{\Hypertarget{read__file_8h_source_l00028}00028             ans = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{read__file_8h_source_l00029}00029         \}}
+\DoxyCodeLine{\Hypertarget{read__file_8h_source_l00030}00030     \}}
+\DoxyCodeLine{\Hypertarget{read__file_8h_source_l00031}00031     in.close();     \textcolor{comment}{// закрываем файл}}
+\DoxyCodeLine{\Hypertarget{read__file_8h_source_l00032}00032 \}}
+
+\end{DoxyCode}

@@ -1,0 +1,200 @@
+\hypertarget{_list__of__note_8h_source}{}\doxysection{List\+\_\+of\+\_\+note.\+h}
+\label{_list__of__note_8h_source}\index{D:/development/gcc/Calendar\_My\_SFML/Calendar2/List\_of\_note.h@{D:/development/gcc/Calendar\_My\_SFML/Calendar2/List\_of\_note.h}}
+\mbox{\hyperlink{_list__of__note_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00001}00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00002}00002 }
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00003}\mbox{\hyperlink{_list__of__note_8h_ac4534ae558b0d2f528909f5a594a3e03}{00003}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{_list__of__note_8h_ac4534ae558b0d2f528909f5a594a3e03}{remove\_line}}(std::string filename, \textcolor{keywordtype}{size\_t} index)}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00004}00004 \{}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00005}00005     std::vector<std::string> vec;}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00006}00006     std::ifstream file(filename);}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00007}00007     \textcolor{keywordflow}{if} (file.is\_open())}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00008}00008     \{}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00009}00009         std::string str;}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00010}00010         \textcolor{keywordflow}{while} (std::getline(file, str))}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00011}00011             vec.push\_back(str);}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00012}00012         file.close();}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00013}00013         \textcolor{keywordflow}{if} (vec.size() < index)}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00014}00014             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00015}00015         vec.erase(vec.begin() + index);}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00016}00016         std::ofstream outfile(filename);}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00017}00017         \textcolor{keywordflow}{if} (outfile.is\_open())}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00018}00018         \{}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00019}00019             std::copy(vec.begin(), vec.end(),}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00020}00020                 std::ostream\_iterator<std::string>(outfile, \textcolor{stringliteral}{"{}\(\backslash\)n"{}}));}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00021}00021             outfile.close();}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00022}00022             \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00023}00023         \}}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00024}00024         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00025}00025     \}}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00026}00026     \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00027}00027 \}}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00030}\mbox{\hyperlink{_list__of__note_8h_a18a540fdb249a09e5b78b018f582781a}{00030}} \textcolor{keywordtype}{void} \mbox{\hyperlink{_list__of__note_8h_a18a540fdb249a09e5b78b018f582781a}{main\_list\_of\_note}}(\textcolor{keywordtype}{int} cl\_day) \{}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00031}00031     \textcolor{keywordtype}{int} num\_note[5] = \{ 0 \};}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00032}00032     \textcolor{keywordtype}{int} flag = 0;}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00033}00033     sf::RenderWindow window\_list\_note(sf::VideoMode(1000, 600), L\textcolor{stringliteral}{"{}Notes"{}});}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00034}00034     std::string file\_name = std::to\_string(\mbox{\hyperlink{main_8cpp_a06c26e76098ca777f4d7bccfb499bb67}{month\_now}}) + \textcolor{stringliteral}{"{}\_"{}} + std::to\_string(\mbox{\hyperlink{main_8cpp_ad26534d084f1594807b46758404546da}{year\_now}}) + \textcolor{stringliteral}{"{}.txt"{}};}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00035}00035     std::string line;}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00036}00036     sf::Font font3;}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00037}00037     font3.loadFromFile(\textcolor{stringliteral}{"{}arial.ttf"{}});}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00038}00038     std::string title\_name = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00039}00039     std::string text\_note = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00040}00040     \textcolor{keywordtype}{int} ii = 0;}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00041}00041     \textcolor{keywordtype}{int} day = 0;}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00042}00042     \textcolor{keywordtype}{int} y\_ch = 0;}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00043}00043     std::string ans;}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00044}00044     sf:Text note\_write; }
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00045}00045     sf::Sprite b\_add\_note;}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00046}00046     sf::Texture b\_add\_texture;}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00047}00047     b\_add\_texture.loadFromFile(\textcolor{stringliteral}{"{}add.png"{}});}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00048}00048     b\_add\_note.setTexture(b\_add\_texture);}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00049}00049     b\_add\_note.setPosition(10, 10);}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00050}00050     sf::Sprite delete\_1;}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00051}00051     sf::Sprite delete\_2;}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00052}00052     \textcolor{keywordtype}{int} num\_str;}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00053}00053     \textcolor{keywordtype}{int} kol\_vo\_str;}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00054}00054     sf::Sprite delete\_3;}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00055}00055     sf::Sprite delete\_4;}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00056}00056     sf::Sprite delete\_5;}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00057}00057     sf::Texture delete\_b;}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00058}00058     delete\_b.loadFromFile(\textcolor{stringliteral}{"{}delete\_note.jpg"{}});}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00059}00059     delete\_1.setTexture(delete\_b);}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00060}00060     delete\_2.setTexture(delete\_b);}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00061}00061     delete\_3.setTexture(delete\_b);}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00062}00062     delete\_4.setTexture(delete\_b);}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00063}00063     delete\_5.setTexture(delete\_b);}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00064}00064     delete\_1.setPosition(800, 30);}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00065}00065     delete\_2.setPosition(800, 120);}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00066}00066     delete\_3.setPosition(800, 210);}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00067}00067     delete\_4.setPosition(800, 300);}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00068}00068     delete\_5.setPosition(800, 390);}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00069}00069     window\_list\_note.clear(sf::Color::White);}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00070}00070     window\_list\_note.draw(b\_add\_note);}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00071}00071     window\_list\_note.display();}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00072}00072     \textcolor{keywordflow}{while} (window\_list\_note.isOpen()) \{}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00073}00073         sf::Vector2i pixelPos = sf::Mouse::getPosition(window\_list\_note);}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00074}00074         sf::Vector2f pos = window\_list\_note.mapPixelToCoords(pixelPos);}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00075}00075         sf::Event event;}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00076}00076         \textcolor{keywordflow}{while} (window\_list\_note.pollEvent(event)) \{}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00077}00077             \textcolor{keywordflow}{if} (event.type == sf::Event::Closed) \{}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00078}00078                 window\_list\_note.close();}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00079}00079             \}}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00080}00080 }
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00081}00081 }
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00082}00082             \textcolor{keywordflow}{if} (event.type == sf::Event::MouseButtonPressed) \{}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00083}00083                 \textcolor{keywordflow}{if} (event.mouseButton.button == sf::Mouse::Left) \{}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00084}00084                     \textcolor{keywordflow}{if} (b\_add\_note.getGlobalBounds().contains(pos.x, pos.y)) \{}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00085}00085                         window\_list\_note.close();}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00086}00086                         \mbox{\hyperlink{_note_8h_a1882aec92bef59c19bf470db814b02a7}{main\_note}}(cl\_day);}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00087}00087                     \}}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00088}00088 }
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00089}00089                     \textcolor{keywordflow}{if} (delete\_1.getGlobalBounds().contains(pos.x, pos.y)) \{}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00090}00090                         \mbox{\hyperlink{_list__of__note_8h_ac4534ae558b0d2f528909f5a594a3e03}{remove\_line}}(file\_name, 0);}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00091}00091                     \}}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00092}00092                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (delete\_2.getGlobalBounds().contains(pos.x, pos.y)) \{}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00093}00093                         \mbox{\hyperlink{_list__of__note_8h_ac4534ae558b0d2f528909f5a594a3e03}{remove\_line}}(file\_name, 1);}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00094}00094                     \}}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00095}00095                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (delete\_3.getGlobalBounds().contains(pos.x, pos.y)) \{}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00096}00096                         \mbox{\hyperlink{_list__of__note_8h_ac4534ae558b0d2f528909f5a594a3e03}{remove\_line}}(file\_name, 2);}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00097}00097                     \}}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00098}00098                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (delete\_4.getGlobalBounds().contains(pos.x, pos.y)) \{}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00099}00099                         \mbox{\hyperlink{_list__of__note_8h_ac4534ae558b0d2f528909f5a594a3e03}{remove\_line}}(file\_name, 3);}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00100}00100                     \}}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00101}00101                     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (delete\_5.getGlobalBounds().contains(pos.x, pos.y)) \{}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00102}00102                         \mbox{\hyperlink{_list__of__note_8h_ac4534ae558b0d2f528909f5a594a3e03}{remove\_line}}(file\_name, 4);}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00103}00103                     \}}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00104}00104                 \}}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00105}00105             \}}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00106}00106         \}}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00107}00107         }
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00108}00108         window\_list\_note.clear(sf::Color::White);}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00109}00109         y\_ch = 0;}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00110}00110         num\_str = 0;}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00111}00111         std::ifstream in(file\_name);}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00112}00112         \textcolor{keywordflow}{if} (in.is\_open()) \{}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00113}00113             kol\_vo\_str = 0;}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00114}00114             flag = 0;}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00115}00115             \textcolor{keywordflow}{while} (std::getline(in, line)) \{}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00116}00116                 ++kol\_vo\_str;}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00117}00117                 \textcolor{keywordflow}{while} (line[ii] != \textcolor{charliteral}{':'}) \{}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00118}00118                     ans += line[ii];}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00119}00119                     ++ii;}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00120}00120                 \}}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00121}00121                 day = std::atoi(ans.c\_str());}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00122}00122                 \textcolor{keywordflow}{if} (day == cl\_day) \{}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00123}00123                     ++ii;}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00124}00124                     ++flag;}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00125}00125                     \textcolor{keywordflow}{while} (line[ii] != \textcolor{charliteral}{'\&'}) \{}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00126}00126                         title\_name += line[ii];}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00127}00127                         ++ii;}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00128}00128                     \}}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00129}00129                     ++ii;}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00130}00130                     \textcolor{keywordflow}{while} (ii <= line.size() -\/ 1) \{}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00131}00131                         text\_note += line[ii];}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00132}00132                         ++ii;}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00133}00133                     \}}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00134}00134                     num\_note[num\_str] = kol\_vo\_str;}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00135}00135                     ++num\_str;}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00136}00136 }
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00137}00137                     note\_write.setFont(font3);}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00138}00138                     note\_write.setCharacterSize(18);}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00139}00139                     note\_write.setFillColor(sf::Color::Black);}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00140}00140                     note\_write.setStyle(sf::Text::Bold | sf::Text::Underlined);}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00141}00141                     note\_write.setString(title\_name);}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00142}00142                     note\_write.setPosition(100, 20 + y\_ch);}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00143}00143                     window\_list\_note.draw(note\_write);}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00144}00144                     title\_name = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00145}00145 }
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00146}00146                     y\_ch += 30;}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00147}00147                     note\_write.setString(text\_note);}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00148}00148                     note\_write.setPosition(130, 20 + y\_ch);}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00149}00149                     window\_list\_note.draw(note\_write);}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00150}00150                     text\_note = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00151}00151                     y\_ch += 50;}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00152}00152 }
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00153}00153 }
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00154}00154 }
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00155}00155                 \}}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00156}00156                 ii = 0;}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00157}00157                 day = 0;}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00158}00158                 ans = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00159}00159             \}}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00160}00160         \}}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00161}00161         in.close();}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00162}00162         \textcolor{keywordflow}{if} (num\_str == 1) \{}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00163}00163             window\_list\_note.draw(delete\_1);}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00164}00164         \}}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00165}00165         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (num\_str == 2) \{}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00166}00166             window\_list\_note.draw(delete\_1);}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00167}00167             window\_list\_note.draw(delete\_2);}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00168}00168         \}}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00169}00169         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (num\_str == 3) \{}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00170}00170             window\_list\_note.draw(delete\_1);}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00171}00171             window\_list\_note.draw(delete\_2);}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00172}00172             window\_list\_note.draw(delete\_3);}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00173}00173         \}}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00174}00174         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (num\_str == 4) \{}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00175}00175             window\_list\_note.draw(delete\_1);}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00176}00176             window\_list\_note.draw(delete\_2);}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00177}00177             window\_list\_note.draw(delete\_3);}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00178}00178             window\_list\_note.draw(delete\_4);}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00179}00179         \}}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00180}00180         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (num\_str == 5) \{}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00181}00181             window\_list\_note.draw(delete\_1);}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00182}00182             window\_list\_note.draw(delete\_2);}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00183}00183             window\_list\_note.draw(delete\_3);}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00184}00184             window\_list\_note.draw(delete\_4);}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00185}00185             window\_list\_note.draw(delete\_5);}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00186}00186 }
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00187}00187         \}}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00188}00188         window\_list\_note.draw(b\_add\_note);}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00189}00189         window\_list\_note.display();}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00190}00190         }
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00191}00191     \}}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00192}00192 \}}
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00193}00193 }
+\DoxyCodeLine{\Hypertarget{_list__of__note_8h_source_l00194}00194 }
+
+\end{DoxyCode}

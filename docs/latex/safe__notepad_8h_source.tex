@@ -1,0 +1,35 @@
+\hypertarget{safe__notepad_8h_source}{}\doxysection{safe\+\_\+notepad.\+h}
+\label{safe__notepad_8h_source}\index{D:/development/gcc/Calendar\_My\_SFML/Calendar2/safe\_notepad.h@{D:/development/gcc/Calendar\_My\_SFML/Calendar2/safe\_notepad.h}}
+\mbox{\hyperlink{safe__notepad_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{safe__notepad_8h_source_l00001}00001 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{\Hypertarget{safe__notepad_8h_source_l00002}00002 \textcolor{preprocessor}{\#include <fstream>};}
+\DoxyCodeLine{\Hypertarget{safe__notepad_8h_source_l00003}00003 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{read__file_8h}{read\_file.h}}"{}};}
+\DoxyCodeLine{\Hypertarget{safe__notepad_8h_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{safe__notepad_8h_source_l00005}\mbox{\hyperlink{safe__notepad_8h_a02a8585b5f6e12e6dbbdd581623765e7}{00005}} \textcolor{keywordtype}{bool} \mbox{\hyperlink{safe__notepad_8h_a02a8585b5f6e12e6dbbdd581623765e7}{checkF}}(std::string file\_name) \{}
+\DoxyCodeLine{\Hypertarget{safe__notepad_8h_source_l00006}00006     std::ifstream file;}
+\DoxyCodeLine{\Hypertarget{safe__notepad_8h_source_l00007}00007     file.open(file\_name);}
+\DoxyCodeLine{\Hypertarget{safe__notepad_8h_source_l00008}00008     \textcolor{keywordflow}{if} (!file) \{}
+\DoxyCodeLine{\Hypertarget{safe__notepad_8h_source_l00009}00009         \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{safe__notepad_8h_source_l00010}00010     \}}
+\DoxyCodeLine{\Hypertarget{safe__notepad_8h_source_l00011}00011     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{safe__notepad_8h_source_l00012}00012         \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{safe__notepad_8h_source_l00013}00013     \}}
+\DoxyCodeLine{\Hypertarget{safe__notepad_8h_source_l00014}00014 \}}
+\DoxyCodeLine{\Hypertarget{safe__notepad_8h_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{safe__notepad_8h_source_l00016}\mbox{\hyperlink{safe__notepad_8h_ad0e3bed75a50d56a9403e5b21c8dd3ef}{00016}} \textcolor{keywordtype}{void} \mbox{\hyperlink{safe__notepad_8h_ad0e3bed75a50d56a9403e5b21c8dd3ef}{safe}}(std::string title, std::string note, \textcolor{keywordtype}{int} day\_num) \{}
+\DoxyCodeLine{\Hypertarget{safe__notepad_8h_source_l00017}00017     std::string file\_name = std::to\_string(\mbox{\hyperlink{main_8cpp_a06c26e76098ca777f4d7bccfb499bb67}{month\_now}}) + \textcolor{stringliteral}{"{}\_"{}} + std::to\_string(\mbox{\hyperlink{main_8cpp_ad26534d084f1594807b46758404546da}{year\_now}}) + \textcolor{stringliteral}{"{}.txt"{}};}
+\DoxyCodeLine{\Hypertarget{safe__notepad_8h_source_l00018}00018     \textcolor{keywordflow}{if} (!\mbox{\hyperlink{safe__notepad_8h_a02a8585b5f6e12e6dbbdd581623765e7}{checkF}}(file\_name)) \{}
+\DoxyCodeLine{\Hypertarget{safe__notepad_8h_source_l00019}00019         std::ofstream outfile(file\_name);}
+\DoxyCodeLine{\Hypertarget{safe__notepad_8h_source_l00020}00020         outfile << std::to\_string(day\_num) + \textcolor{stringliteral}{"{}:"{}} + title + \textcolor{stringliteral}{"{}\&"{}} + note + \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{\Hypertarget{safe__notepad_8h_source_l00021}00021         outfile.close();}
+\DoxyCodeLine{\Hypertarget{safe__notepad_8h_source_l00022}00022     \}}
+\DoxyCodeLine{\Hypertarget{safe__notepad_8h_source_l00023}00023     \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{\Hypertarget{safe__notepad_8h_source_l00024}00024         ofstream F;}
+\DoxyCodeLine{\Hypertarget{safe__notepad_8h_source_l00025}00025         F.open(file\_name, ios::app);}
+\DoxyCodeLine{\Hypertarget{safe__notepad_8h_source_l00026}00026         F << std::to\_string(day\_num) + \textcolor{stringliteral}{"{}:"{}} + title + \textcolor{stringliteral}{"{}\&"{}} + note + \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{\Hypertarget{safe__notepad_8h_source_l00027}00027         F.close();}
+\DoxyCodeLine{\Hypertarget{safe__notepad_8h_source_l00028}00028     \}}
+\DoxyCodeLine{\Hypertarget{safe__notepad_8h_source_l00029}00029 \}}
+
+\end{DoxyCode}
